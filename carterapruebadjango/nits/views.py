@@ -5,15 +5,18 @@ import pandas as pd
 
 # Create your views here.
 
+def Home(request):
+    return render(request,'nits/index.html')
+
 def tabla_indicadores(request, nit):
 
     """Leer el nit y mostrar la tabla de indicadores"""
 
     indicadores = pd.read_csv(
-        r'D:\Users\chelsy.mena\OneDrive - Centro de Servicios Mundial SAS\Documentos\Proyectos\Cartera\indicadores_2018_a_2020.csv',
-        sep=";")
+        r'C:\Users\KEVIN\Desktop\PruebaProyectoCartera\PythonMaestro7.csv',
+        sep=",")
     indicadores = indicadores.astype({'NIT': str})
-
+    print(indicadores)
     tabla = indicadores[indicadores.NIT == nit]
     
     if tabla.shape[0] == 0:
