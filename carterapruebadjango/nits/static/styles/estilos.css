@@ -1,0 +1,13 @@
+.menu{
+    background-color: #005192;
+    position: fixed;
+    display: flex;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+}
+.margen{
+display: flex;
+align-content: center;
+    margin: 10px;
+}

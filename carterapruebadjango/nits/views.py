@@ -5,24 +5,38 @@ import pandas as pd
 
 # Create your views here.
 
-def Home(request):
-    return render(request,'nits/index.html')
+def busqueda(request1):
 
-def tabla_indicadores(request, nit):
+    return render(request1,"nits/busqueda.html")
 
-    """Leer el nit y mostrar la tabla de indicadores"""
-
-    indicadores = pd.read_csv(
-        r'C:\Users\KEVIN\Desktop\PruebaProyectoCartera\PythonMaestro7.csv',
-        sep=",")
-    indicadores = indicadores.astype({'NIT': str})
-    print(indicadores)
-    tabla = indicadores[indicadores.NIT == nit]
+def buscar(request1):
+    mensaje="Articulo Buscado : %r" %request1.GET["prd"]
     
+
+    return HttpResponse(mensaje)
+
+def Home(request):
+    return render(request,'nits/login.html')
+
+def tabla_indicadores(request):
+
+    """Leer el nit y mostrar la tabla de Maestro"""
+    
+    nit = request.GET["prd"]
+    maestro = pd.read_csv(
+        r'D:\Users\p.manufactura07\OneDrive - Centro de Servicios Mundial SAS\Escritorio\PruebaProyectoCartera\PythonMaestro7.csv',
+        sep=",")
+    maestro = maestro.astype({'NIT': str})
+    print(maestro)
+    tabla = maestro[maestro.NIT == nit]
+    
+  
     if tabla.shape[0] == 0:
         pedazo_html = "<h1>Ese NIT no está en la tabla</h1>"
     else:
-        pedazo_html = tabla.to_html(index=False)
+        pedazo_html = tabla.T.to_html(index=False,classes=['maestro'])
     
 
     return render(request, "nits/index.html", {'tabla_a_mostrar': pedazo_html, 'nit': nit})
+
+

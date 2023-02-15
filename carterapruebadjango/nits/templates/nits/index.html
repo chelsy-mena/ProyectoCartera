@@ -5,26 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartera</title>
-    <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="icon" type="image/jpeg" href="./logo.jpeg"/>
+    <link rel="stylesheet" href="../../static/styles/estilos.css">
+    <link rel="icon" type="image/jpeg" href="../../static/img/logoPagina.png"/>
 </head>
-<body>
-    <h1>hola django</h1>
+<body class="">
+    {% include '../shared/menu.html' %}
  
-    {% autoescape off %}
-    {% if nit %}
-        <div><p><b> Esta es la tabla de {{nit}}:</b></p>
-        {{tabla_a_mostrar}}</div>
-    
-    {% else %}
-        <h1>Busca un nit en el explorador SVP</h1>
-    
-    {% endif %}
+<div class="row">
+
+
+
+
   
-    {% endautoescape %}
+            {% autoescape off %}
+            {% if nit %}
+                <div><p class=""><b> Esta es la tabla de {{nit}}:</b></p>
+
+                   
+                {{tabla_a_mostrar}}</div>
+            
+            {% else %}
+                <h1>Busca un nit en el explorador SVP</h1>
+            
+            {% endif %}
+          
+            {% endautoescape %}
+   
+    <div class="col-6">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum sit saepe hic qui beatae, earum quasi fugit assumenda porro quas cupiditate quo numquam voluptate dolores, rem officia, obcaecati at laborum autem adipisci perferendis cum mollitia cumque! Beatae similique at vel.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea possimus optio nulla iusto, quae mollitia ipsum aliquam quaerat maiores doloribus.
+        Lorem ipsum dolor sit amet.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem velit repellendus deleniti dignissimos perferendis cumque reprehenderit voluptate doloremque officiis, quae quam laborum magni voluptates. Debitis eaque, quibusdam aut architecto, voluptatem impedit distinctio ad dignissimos est aliquid provident repellat. Non consequuntur est molestias unde repellendus porro natus deleniti vel officia quos quibusdam sed voluptatem eveniet totam necessitatibus, ad eum? Debitis commodi sequi, nobis nesciunt, architecto voluptatem earum nostrum accusantium libero ducimus corporis? Officiis voluptas obcaecati hic eaque officia et aperiam nemo impedit, porro veritatis similique dolore itaque cupiditate, mollitia dolorum qui repudiandae blanditiis! Aspernatur officia ipsam alias accusamus, aut voluptas dolore magni, molestiae consequuntur fugiat neque exercitationem doloremque illo, est at necessitatibus explicabo temporibus maxime? Debitis, aut magnam. Quo enim distinctio ipsum cumque alias voluptates, soluta ex veniam sint ut exercitationem vero perferendis. Nostrum sed ducimus est odit beatae dolorem vitae quae tempora assumenda ipsum rem itaque similique ab provident esse magni id, quo sit magnam? Cumque velit voluptatibus nesciunt magni sunt neque odio ipsum error possimus, corporis accusamus ipsam quod perferendis dolore soluta ut quia facilis voluptas pariatur autem est ducimus, aspernatur fuga. Aliquam quia nisi tenetur ex. Minima velit dicta animi quod, perferendis quo nesciunt sit! Tenetur adipisci ad corrupti iste veritatis doloremque accusantium eaque omnis voluptatibus est sint expedita culpa quod, tempore fugiat id, delectus sed nobis. Fugit repudiandae provident sunt cumque debitis dicta obcaecati dolor, veniam neque sed fuga, sit ratione molestias nemo dolorum doloremque tenetur quia architecto iusto facilis, sapiente consectetur cum optio corrupti. Reprehenderit rerum deserunt quis incidunt nulla, labore excepturi inventore hic nemo. Unde ab nisi odio corrupti blanditiis, suscipit molestias mollitia temporibus nobis sint dolorum, vel inventore aliquid molestiae libero illo hic doloribus rerum optio asperiores totam voluptates voluptatibus. Sint necessitatibus quaerat vel itaque ducimus et beatae fuga ipsum porro officia rerum exercitationem, sapiente velit nisi voluptas quo! Accusamus exercitationem error itaque. Praesentium sint corrupti doloremque cupiditate, necessitatibus illo possimus fugit sequi, et voluptatibus exercitationem ad expedita aspernatur in. Veniam asperiores odio sapiente repellat temporibus doloribus accusamus aut iusto sed voluptates. Ipsa quisquam placeat eligendi iure sunt soluta illo ex doloremque tempore dolor quaerat repellat deserunt, unde similique dolore asperiores odit nemo libero? A sint, sequi tempora alias repellat, laboriosam doloremque quis animi aspernatur ad adipisci, odio aliquam quas. Totam saepe quisquam, autem libero natus beatae laborum cupiditate vel obcaecati laboriosam aperiam minima earum similique nam aspernatur quam iure sint architecto mollitia qui? Deserunt, sit repellat soluta placeat inventore assumenda sunt esse modi molestias itaque ut. Dicta alias ratione, illo blanditiis, quasi, nobis sit aspernatur cumque officia illum distinctio assumenda id laudantium pariatur non eum ipsam fugit magnam! Dicta expedita beatae aspernatur sunt doloribus tempore minus, obcaecati, aliquid ducimus sequi, impedit quia atque tempora alias fugit incidunt odit perspiciatis nobis inventore! Sit totam esse voluptatibus magni rem voluptatum, autem voluptatem quisquam maiores culpa dolor dignissimos delectus cupiditate labore. Facilis beatae, ipsam amet ducimus quos placeat aspernatur porro nemo velit, saepe ad rerum quibusdam sequi perspiciatis necessitatibus consequuntur reiciendis, quas minus. Saepe, eligendi laboriosam!
+    </div>
+</div>
+
+
+{% include '../shared/footer.html' %}
+
+
     
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
