@@ -1,0 +1,24 @@
+*{
+    font-family: 'Kanit', sans-serif;
+}
+.formulario{
+    display: flex;
+}
+.tabla{
+    border: 0px solid;
+    border-color: rgb(211, 211, 211) ;
+    --bs-table-striped-bg: #f8f9fa;
+    border-radius: 30px ;
+    
+}
+body{
+    background-color: #f8f9fa;
+}
+.btn-custom{
+    background-color: #94c11f;
+    color: #f8f9fa;
+}
+.tituloInterno{
+    color: #94c11f;
+    padding-left: 15px;
+}
