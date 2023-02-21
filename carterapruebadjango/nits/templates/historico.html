@@ -46,7 +46,16 @@
         </section>
 
         <section>
-          <h3 class=" text-center tituloInterno" >Grafica de Datos</h3>
+          <h3 class="tituloInterno"> Grafica de Datos</h3>
+
+          {% autoescape off %}
+          <div class="card shadow" style="padding: 10px;">
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+            {{grafica_indicadores}}
+          </div>
+          {% endautoescape %}
+
+
         </section>
         
     </main>

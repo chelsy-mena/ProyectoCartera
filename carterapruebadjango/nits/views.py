@@ -1,30 +1,34 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-
 import pandas as pd
-import plotly.express as px
 import plotly.graph_objects as go
 import plotly.io as pio
+
 
 # Create your views here.
 def Home(request):
     return render(request,'inicio.html')
+
 def historico(request):
     return render(request,'historico.html')
+
 def registrar(request):
     return render(request,'registrar.html')
+    
 def buscar(request1):
     mensaje="Articulo Buscado : %r" %request1.GET["prd"]
     return HttpResponse(mensaje)
+
 def output(request):
 
     """Leer el nit y mostrar la tabla de Maestro"""
     
     nit = request.GET["prd"]
 
+    # TABLA MAESTRO
     maestro = pd.read_csv(
-        r'D:\Users\p.manufactura07\OneDrive - Centro de Servicios Mundial SAS\Escritorio\PruebaProyectoCartera\MaestroClientes.csv',
+        r'nits\static\data\data_maestro.csv',
         sep=";")
     maestro = maestro.astype({'NIT': str})
     print(maestro)
@@ -36,52 +40,53 @@ def output(request):
     if tabla.shape[0] == 0:
         maestro_html = "<h5>Ese NIT no está en los datos</h5>"
     else:
-        maestro_html = tabla.to_html(index=False, header=False, classes=['table table-striped  tabla'])
+        maestro_html = tabla.to_html(index=False, header=False, classes=['table table-striped tabla'])
 
-
+    # TABLA INDICADORES
     indicadores = pd.read_csv(
-        r'D:\Users\p.manufactura07\OneDrive - Centro de Servicios Mundial SAS\Escritorio\PruebaProyectoCartera\indicadores_2018_a_2020.csv',
+        r'nits\static\data\data_indicadores.csv',
         sep=";")
-    indicadores = indicadores.astype({'NIT': str})
+    indicadores = indicadores.astype({'NIT': str, 'AÑO': str})
     tabla = indicadores[indicadores.NIT == nit].drop(columns = ['NIT'])
-    tabla = tabla.transpose()
-    tabla.reset_index(drop=False, inplace=True)
-    if tabla.shape[0] == 0:
+    tabla_dos = tabla.transpose()
+    tabla_dos.reset_index(drop=False, inplace=True)
+    if tabla_dos.shape[0] == 0:
         indicadores_html = "<h5>Ese NIT no está en los datos</h5>"
     else:
-        pedazo_html = tabla.to_html( index=False)
-    
-    
+        indicadores_html = tabla_dos.to_html(index=False, header=False, classes=['table table-striped tabla'])
+
+    # GRAFICA INDICADORES
     fig = go.Figure()
 
-    for column in indicadores.columns:
-        if (column != 'NIT') and (column != 'AÑO'):
+    custom_template = {
+    "layout": go.Layout(
+        font={
+            "family": 'Kanit',
+            "size": 15
+        },
+        plot_bgcolor="#FBFBFB",
+        paper_bgcolor="#FBFBFB"
+    )
+        }
+
+    fig.update_layout(
+        template = custom_template,
+        width = 1100,
+        height = 500)
+
+    for column in tabla.columns.tolist():
+        if column == 'AÑO':
+            continue
+        else:
             fig.add_trace(
                 go.Bar(
-                    x=tabla['AÑO'],
-                    y = tabla[column],
-                    name = column))
+                     x = tabla['AÑO'],
+                     y = tabla[column],
+                     name = column))
 
-    fig.update_layout(plot_bgcolor='#FFFFFF',
-                width = 1000,
-                height = 400,
-                margin= {'l':20, 'r':20, 't':50, 'b':20})
-    #fig.update_xaxes(showgrid=False, gridwidth=1, gridcolor='#dfebec', title = 'Año')
-    #fig.update_yaxes(showgrid=True, gridwidth=0.5, gridcolor='#dfebec', title = 'Valor del Indicador', secondary_y=False)
-
-    html_grafica = pio.to_html(fig, include_plotlyjs=False, full_html=False)
-
-    # opciones = indicadores.columns.tolist()
-    # opciones_dict = {}
-
-    # for opcion in opciones:
-    #     opciones_dict[opcion]= {'id': opciones.index(opcion),
-    #                            'name': opcion}
-
-    
-    return render(request,
-                 "nits/index.html",
-                 {#'options': opciones_dict,
-                 'tabla_a_mostrar': pedazo_html,
-                 'grafica': html_grafica,
-                 'nit': nit})
+    grafica_html = pio.to_html(fig, include_plotlyjs=False, full_html=False)
+    #grafica_html = tabla.columns.tolist()[1]
+    return render(request, "historico.html", {'tabla_maestro': maestro_html,
+                                              'tabla_indicadores': indicadores_html,
+                                              'grafica_indicadores': grafica_html,
+                                              'nit': nit})
