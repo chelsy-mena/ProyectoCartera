@@ -18,9 +18,9 @@
         {% include './shared/menu.html' %}
     
 
-    <main class="container my-5  ">
+    <main class="container my-5 ">
         <section class="row my-5">
-            <div class="col-4 mx-auto  ">
+            <div class="col-4">
                 <div class="row pb-4">
                     <form action="/buscar/" method="GET" class="formulario" >
                         <input type="text" placeholder="Ingrese un NIT" class="form-control w-75 " autocomplete="off" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="prd">
@@ -34,7 +34,7 @@
                     </div>
                   {% endautoescape %}
             </div>
-            <div class="col-7">
+            <div class="col-7 mx-auto">
                 <h3 class=" tituloInterno">Indicadores Financieros</h3>
                 {% autoescape off %}
                   <div class="card shadow" style="padding: 10px;"> 
@@ -44,7 +44,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="row my-5">
           <h3 class="tituloInterno"> Grafica de Datos</h3>
 
           {% autoescape off %}
@@ -53,7 +53,6 @@
             {{grafica_indicadores}}
           </div>
           {% endautoescape %}
-
 
         </section>
         

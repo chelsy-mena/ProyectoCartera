@@ -23,13 +23,15 @@ nav{
 }
 .titulomenu{
     margin-top: 9px;
+    color: black;
  
 }
 .logoander{
     margin-top: 10px;
     margin-left: 30px;
     width: 30px;
-    height: 30px;  
+    height: 30px;
+    margin-right: 10px;  
 }
 .inicio{
     margin-left: 15px;
@@ -38,3 +40,14 @@ nav{
    border-bottom: 1px solid rgb(221, 221, 221);
    box-shadow: 0 .3rem 2rem rgba(0,0,0,.1)!important;
 }
+.logo{
+    display: flex;
+}
+.link{
+    display: flex;
+    text-transform: none;
+    text-decoration: none;
+    }
+.link :hover{
+        color:#40badc;
+    }

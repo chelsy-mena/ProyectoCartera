@@ -84,8 +84,8 @@ h6{
     height: 20px;
 }
 .link{
-text-transform: none;
-text-decoration: none;
+    text-transform: none;
+    text-decoration: none !important;
 }
 .link :hover{
     color:#40badc ;
