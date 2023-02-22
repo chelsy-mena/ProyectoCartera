@@ -14,7 +14,6 @@ def Home(request):
 def historico(request):
     return render(request,'historico.html')
 
-  
 def buscar(request1):
     mensaje="Articulo Buscado : %r" %request1.GET["prd"]
     return HttpResponse(mensaje)
