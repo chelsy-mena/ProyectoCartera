@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from nits.formularios.formularioPDF import FormularioPDF
 
 import pandas as pd
 import plotly.graph_objects as go
@@ -13,9 +14,7 @@ def Home(request):
 def historico(request):
     return render(request,'historico.html')
 
-def registrar(request):
-    return render(request,'registrar.html')
-    
+  
 def buscar(request1):
     mensaje="Articulo Buscado : %r" %request1.GET["prd"]
     return HttpResponse(mensaje)
@@ -90,3 +89,18 @@ def output(request):
                                               'tabla_indicadores': indicadores_html,
                                               'grafica_indicadores': grafica_html,
                                               'nit': nit})
+
+def registrar(request):
+    lanzandoAlerta=False
+    formulario=FormularioPDF()
+    diccionario={
+        "formulario1":formulario,
+        "bandera":lanzandoAlerta
+    }
+    if request.method=='POST':
+        datosRecibidos=FormularioPDF(request.POST)
+        if datosRecibidos.is_valid():
+            datos=datosRecibidos.cleaned_data
+            print(datos)
+            diccionario["bandera"]=True
+    return render(request,'registrar.html',diccionario)
