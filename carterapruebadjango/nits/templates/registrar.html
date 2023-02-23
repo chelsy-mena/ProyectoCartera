@@ -28,7 +28,7 @@
         <script>                
         Swal.fire(
                 'Exito',
-                'Se Registraron los datos del cliente',
+                'El Registro en la  Base de Datos fue registrada ',
                 'success'
             )
         </script> 
@@ -43,21 +43,22 @@
                     <div class="row">
                         <h3 class=" text-center tituloInterno">Información Cliente</h3>
                         <div class="col-3">
-                            {{formulario.NIT}}
+                            
                         </div>
                         <div class="col-3">
-                            {{formulario.Fecha_de_Corte}}
+                            {{formulario.NIT}}
+                            <!-- <button type="button" id="boton">boton</button> -->
                         </div>
                         <div class="col-3"> 
                             {{formulario.AÑO}}
                         </div>
                         <div class="col-3">
-                            {{formulario.Tipo_empresa}}
+                    
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-4"><h3 class="text-center tituloInterno">Estado de Resultados</h3></div>
+                        <div class="col-4"><h3 class="text-center tituloInterno">Estados de Resultados</h3></div>
                         <div class="col-8"><h3 class="text-center tituloInterno">Balance  General</h3></div>
                     </div>
 
@@ -66,6 +67,7 @@
                          
                             {{formulario.Ingresos_Operacionales}}
                             {{formulario.Costos_de_ventas_y_de_prestación_de_servicios}}
+                            {{formulario.Utilidad_Bruta}}
                             {{formulario.Otros_ingresos}}
                             {{formulario.Gastos_Operacionales_de_venta}}
                             {{formulario.Gastos_Operacionales_de_admon}}
@@ -113,7 +115,7 @@
                             {{formulario.Total_Activo}}
                             {{formulario.Total_Pasivo_Corriente}}
                             {{formulario.Total_Pasivo_No_Corriente}}
-                            {{formulario.Utilidad_Bruta}}
+                            
                            
                         </div>
                     </div>
@@ -127,7 +129,7 @@
     <footer>
         {% include './shared/footer.html' %}
     </footer>
-
+<script src="../static/js/calculos.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"

@@ -1,25 +1,18 @@
 from django import forms
 class FormularioPDF(forms.Form):
     NIT=forms.CharField(
-        widget=forms.TextInput(attrs={"class":"form-control mb-3","placeholder":'NIT',"autocomplete":"off", 'readonly':'readonly'}),
+        widget=forms.TextInput(attrs={"class":"form-control mb-3","placeholder":'NIT',"autocomplete":"off","id":"hola","Onclick":"buscar()"}),
         required=True,
         max_length=50
     ) 
-    Fecha_de_Corte=forms.CharField(
-        widget=forms.TextInput(attrs={"class":"form-control mb-3","placeholder":'Fecha de Corte',"autocomplete":"off"}),
-        required=True,
-        max_length=50
-    )
+   
     AÑO=forms.CharField(
-        widget=forms.DateInput(attrs={"class":"form-control mb-3","placeholder":'Año',"autocomplete":"off" }),
+        widget=forms.DateInput(attrs={"class":"form-control mb-3","placeholder":'Año',"autocomplete":"off"}),
         required=True,
-        max_length=50
+        max_length=50,
+        
     )
-    Tipo_empresa=forms.CharField(
-        widget=forms.TextInput(attrs={"class":"form-control mb-3","placeholder":'Tipo empresa',"autocomplete":"off"}),
-        required=True,
-        max_length=50
-    )
+   
     Ingresos_Operacionales=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Ingresos Operacionales',"autocomplete":"off"}),
         required=True,
@@ -30,6 +23,11 @@ class FormularioPDF(forms.Form):
         required=True,
         max_length=50
     )
+    Utilidad_Bruta=forms.CharField(
+        widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Utilidad bruta',"autocomplete":"off"}),
+        required=True,
+        max_length=50
+    ) 
     Otros_ingresos=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Otros ingresos',"autocomplete":"off"}),
         required=True,
@@ -205,11 +203,7 @@ class FormularioPDF(forms.Form):
         required=True,
         max_length=50
     ) 
-    Utilidad_Bruta=forms.CharField(
-        widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Utilidad bruta',"autocomplete":"off"}),
-        required=True,
-        max_length=50
-    ) 
+  
     Utilidad_Operacional=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Utilidad operacional',"autocomplete":"off"}),
         required=True,
