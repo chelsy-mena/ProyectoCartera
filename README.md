@@ -3,6 +3,9 @@
 
 ### Requerimientos
 Python:
-    - Django
-    - Pandas
-    - Plotly
+- Django
+- Pandas
+- Plotly
+- Numpy
+- Regex
+- openpyxl
