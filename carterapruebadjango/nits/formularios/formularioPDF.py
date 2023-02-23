@@ -24,8 +24,10 @@ class FormularioPDF(forms.Form):
     )
     Utilidad_Bruta=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Utilidad bruta',"autocomplete":"off"}),
-        required=True,
+        required=False,
+        disabled=True,
         max_length=50
+        
     ) 
     Otros_ingresos=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Otros ingresos',"autocomplete":"off"}),
@@ -144,7 +146,8 @@ class FormularioPDF(forms.Form):
     ) 
     Total_Activo_Corriente=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Total activo corriente',"autocomplete":"off"}),
-        required=True,
+        required=False,
+        disabled=True,
         max_length=50
     ) 
     Otros_Activos_No_Corrientes=forms.CharField(
@@ -154,12 +157,14 @@ class FormularioPDF(forms.Form):
     ) 
     Total_Activo_No_Corriente=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Total activo no corriente',"autocomplete":"off"}),
-        required=True,
+        required=False,
+        disabled=True,
         max_length=50
     ) 
     Total_Activo=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Total activo',"autocomplete":"off"}),
-        required=True,
+        required=False,
+        disabled=True,
         max_length=50
     ) 
     Otros_Pasivos_Corrientes=forms.CharField(
@@ -169,7 +174,8 @@ class FormularioPDF(forms.Form):
     ) 
     Total_Pasivo_Corriente=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Total pasivo corriente',"autocomplete":"off"}),
-        required=True,
+        required=False,
+        disabled=True,
         max_length=50
     ) 
     Otros_pasivos_no_Corrientes=forms.CharField(
@@ -179,12 +185,14 @@ class FormularioPDF(forms.Form):
     ) 
     Total_Pasivo_No_Corriente=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Total pasivo no corriente ',"autocomplete":"off"}),
-        required=True,
+        required=False,
+        disabled=True,
         max_length=50
     ) 
     Total_Pasivo=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Total pasivo',"autocomplete":"off"}),
-        required=True,
+        required=False,
+        disabled=True,
         max_length=50
     ) 
     Otros_Patrimonio=forms.CharField(
@@ -194,18 +202,21 @@ class FormularioPDF(forms.Form):
     ) 
     Total_patrimonio=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Total patrimonio',"autocomplete":"off"}),
-        required=True,
+        required=False,
+        disabled=True,
         max_length=50
     ) 
     Total_Pasivo_mas_Patrimonio=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Total pasivo mas patrimonio ',"autocomplete":"off"}),
-        required=True,
+        required=False,
+        disabled=True,
         max_length=50
     ) 
   
     Utilidad_Operacional=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Utilidad operacional',"autocomplete":"off"}),
-        required=True,
+        required=False,
+        disabled=True,
         max_length=50
     ) 
     Otros_ingresos_o_egresos=forms.CharField(
@@ -215,11 +226,13 @@ class FormularioPDF(forms.Form):
     ) 
     Utilidad_antes_de_impuestos=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Utilidad antes de impuestos',"autocomplete":"off"}),
-        required=True,
+        required=False,
+        disabled=True,
         max_length=50
     )
     Ganancias_y_pérdidas=forms.CharField(
         widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Ganancias y pérdidas',"autocomplete":"off"}),
-        required=True,
+        required=False,
+        disabled=True,
         max_length=50
     )
