@@ -18,6 +18,7 @@ def calcular_totales(fila):
 
     for column in fila_df.columns:
         if (column != 'NIT') and (column != 'AÑO'):
+            fila_df[column] = fila_df[column].apply(lambda x: x.replace('', '0'))
             fila_df = fila_df.astype({column: float})
 
 
