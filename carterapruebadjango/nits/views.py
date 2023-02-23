@@ -44,8 +44,15 @@ def output(request):
     indicadores = pd.read_csv(
         r'nits\static\data\data_indicadores.csv',
         sep=";")
+   
     indicadores = indicadores.astype({'NIT': str, 'AÑO': str})
     tabla = indicadores[indicadores.NIT == nit].drop(columns = ['NIT'])
+    tabla['CAPITAL DE TRABAJO'] = tabla['CAPITAL DE TRABAJO'].apply(lambda x: "$ "+'{:,.0f}'.format(x) )
+    tabla['ENDEUDAMIENTO TOTAL'] = tabla['ENDEUDAMIENTO TOTAL'].apply(lambda x: '{:,}'.format(x) + " %" )
+    tabla['ENDEUDAMIENTO FINANCIERO'] = tabla['ENDEUDAMIENTO FINANCIERO'].apply(lambda x: '{:,}'.format(x) + " %" )
+    tabla['MARGEN BRUTO'] = tabla['MARGEN BRUTO'].apply(lambda x: '{:,}'.format(x) + " %"  )
+    tabla['MARGEN OPERACIONAL'] = tabla['MARGEN OPERACIONAL'].apply(lambda x: '{:,}'.format(x) + " %"  )
+    tabla['MARGEN NETO'] = tabla['MARGEN NETO'].apply(lambda x: '{:,}'.format(x) + " %"  )
     tabla_dos = tabla.transpose()
     tabla_dos.reset_index(drop=False, inplace=True)
     if tabla_dos.shape[0] == 0:
@@ -93,7 +100,7 @@ def registrar(request):
     lanzandoAlerta=False
     formulario=FormularioPDF()
     diccionario={
-        "formulario1":formulario,
+        "formulario":formulario,
         "bandera":lanzandoAlerta
     }
     if request.method=='POST':

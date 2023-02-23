@@ -38,15 +38,91 @@
     <main >
         <br>
         <div class="container my-5">
-            <div class="col-6 col-md-7">
+            
                 <form method="POST">
-                    <h2>Registro</h2> {{formulario1}}
+                    <div class="row">
+                        <h3 class=" text-center tituloInterno">Información Cliente</h3>
+                        <div class="col-3">
+                            {{formulario.NIT}}
+                        </div>
+                        <div class="col-3">
+                            {{formulario.Fecha_de_Corte}}
+                        </div>
+                        <div class="col-3"> 
+                            {{formulario.AÑO}}
+                        </div>
+                        <div class="col-3">
+                            {{formulario.Tipo_empresa}}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4"><h3 class="text-center tituloInterno">Estado de Resultados</h3></div>
+                        <div class="col-8"><h3 class="text-center tituloInterno">Balance  General</h3></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                         
+                            {{formulario.Ingresos_Operacionales}}
+                            {{formulario.Costos_de_ventas_y_de_prestación_de_servicios}}
+                            {{formulario.Otros_ingresos}}
+                            {{formulario.Gastos_Operacionales_de_venta}}
+                            {{formulario.Gastos_Operacionales_de_admon}}
+                            {{formulario.Otros_gastos}}
+                            {{formulario.Otras_ganancias_pérdidas}}
+                            {{formulario.Utilidad_Operacional}}
+                            {{formulario.Ingresos_financieros}}
+                            {{formulario.Costos_financieros}}
+                            {{formulario.Otros_ingresos_o_egresos}}
+                            {{formulario.Utilidad_antes_de_impuestos}}
+                            {{formulario.Impuesto_de_renta_y_complementarios}}
+                            {{formulario.Ganancias_y_pérdidas}}
+                            
+
+                           
+                        </div>
+                        <div class="col-4">
+                          
+                            {{formulario.Efectivo_y_equivalentes_al_efectivo}}
+                            {{formulario.Clientes_CP}}
+                            {{formulario.Inventarios_CP}}
+                            {{formulario.Otros_activos_financieros}}
+                            {{formulario.Otros_Activos_Corrientes}}
+                            {{formulario.Total_Activo_Corriente}}
+                            {{formulario.Deudores_LP}}
+                            {{formulario.Otros_Activos_No_Corrientes}}
+                            {{formulario.Propiedad_planta_y_equipo}}
+                            {{formulario.Total_Activo_No_Corriente}}
+                            {{formulario.Obligaciones_Financieras_CP}}
+                            {{formulario.Proveedores_CP}}
+                            {{formulario.Otros_Pasivos_Corrientes}}
+                            {{formulario.Obligaciones_Financieras_LP}}
+                        </div>
+                        <div class="col-4 ">
+                            {{formulario.Proveedores_LP}}
+                            {{formulario.Otros_pasivos_no_Corrientes}}
+                            {{formulario.Total_Pasivo}}
+                            {{formulario.Capital_Social}}
+                            {{formulario.Prima_de_emisión}}
+                            {{formulario.Reservas}}
+                            {{formulario.Ganancias_acumuladas}}
+                            {{formulario.Otros_Patrimonio}}
+                            {{formulario.Total_patrimonio}}
+                            {{formulario.Total_Pasivo_mas_Patrimonio}}
+                            {{formulario.Total_Activo}}
+                            {{formulario.Total_Pasivo_Corriente}}
+                            {{formulario.Total_Pasivo_No_Corriente}}
+                            {{formulario.Utilidad_Bruta}}
+                           
+                        </div>
+                    </div>
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-custom">Registrar</button>
+                    <button type="submit" class="btn btn-custom ">Registrar</button>
                 </form>
             </div>
-        </div>
-        </div>
+        
+ 
     </main>
     <footer>
         {% include './shared/footer.html' %}
