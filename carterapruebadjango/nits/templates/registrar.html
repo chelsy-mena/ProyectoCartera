@@ -96,14 +96,17 @@
                             {{formulario.Otros_Activos_No_Corrientes}}
                             {{formulario.Propiedad_planta_y_equipo}}
                             {{formulario.Total_Activo_No_Corriente}}
+                            {{formulario.Total_Activo}}
                             {{formulario.Obligaciones_Financieras_CP}}
                             {{formulario.Proveedores_CP}}
                             {{formulario.Otros_Pasivos_Corrientes}}
-                            {{formulario.Obligaciones_Financieras_LP}}
+                            {{formulario.Total_Pasivo_Corriente}}
                         </div>
                         <div class="col-4 ">
+                            {{formulario.Obligaciones_Financieras_LP}}
                             {{formulario.Proveedores_LP}}
                             {{formulario.Otros_pasivos_no_Corrientes}}
+                            {{formulario.Total_Pasivo_No_Corriente}}
                             {{formulario.Total_Pasivo}}
                             {{formulario.Capital_Social}}
                             {{formulario.Prima_de_emisión}}
@@ -112,15 +115,15 @@
                             {{formulario.Otros_Patrimonio}}
                             {{formulario.Total_patrimonio}}
                             {{formulario.Total_Pasivo_mas_Patrimonio}}
-                            {{formulario.Total_Activo}}
-                            {{formulario.Total_Pasivo_Corriente}}
-                            {{formulario.Total_Pasivo_No_Corriente}}
+                            {% csrf_token %}
+            
+                           <center><button type="submit" class="btn btn-custom ">Registrar</button></center> 
+                       
                             
                            
                         </div>
                     </div>
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-custom ">Registrar</button>
+                   
                 </form>
             </div>
         
