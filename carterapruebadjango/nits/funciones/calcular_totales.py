@@ -12,8 +12,13 @@ def calcular_totales(fila):
     fila_df -> DataFrame de una fila con lo registrado por el usuario y las columnas calculadas
     """
 
-    fila_df = pd.DataFrame(fila)
+    fila_df = pd.DataFrame(fila, index=[0])
+    fila_df = fila_df.astype({'AÑO': str, 'NIT': str})
     fila_df.columns = [x.replace('_', ' ') for x in fila_df.columns]
+
+    for column in fila_df.columns:
+        if (column != 'NIT') and (column != 'AÑO'):
+            fila_df = fila_df.astype({column: float})
 
 
     # Estado de Resultados
@@ -68,6 +73,4 @@ def calcular_totales(fila):
     fila_df['Ganancias y pérdidas'] = fila_df['Utilidad antes de impuestos'] + \
                                       fila_df['Impuesto de renta y complementarios']
 
-
-    return fila_df
-    
+    return fila_df   

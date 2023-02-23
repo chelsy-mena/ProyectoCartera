@@ -3,14 +3,13 @@ class FormularioPDF(forms.Form):
     NIT=forms.CharField(
         widget=forms.TextInput(attrs={"class":"form-control mb-3","placeholder":'NIT',"autocomplete":"off","id":"hola","Onclick":"buscar()"}),
         required=True,
-        max_length=50
+        max_length=9
     ) 
    
     AÑO=forms.CharField(
-        widget=forms.DateInput(attrs={"class":"form-control mb-3","placeholder":'Año',"autocomplete":"off"}),
+        widget=forms.TextInput(attrs={"class":"form-control mb-3","placeholder":'Año',"autocomplete":"off"}),
         required=True,
-        max_length=50,
-        
+        max_length=4,
     )
    
     Ingresos_Operacionales=forms.CharField(
@@ -19,7 +18,7 @@ class FormularioPDF(forms.Form):
          max_length=50
     )
     Costos_de_ventas_y_de_prestación_de_servicios=forms.CharField(
-        widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Costo de ventas y de prestacion de servicios',"autocomplete":"off"}),
+        widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Costo de ventas y de prestación de servicios',"autocomplete":"off"}),
         required=True,
         max_length=50
     )
@@ -34,7 +33,7 @@ class FormularioPDF(forms.Form):
         max_length=50
     )
     Gastos_Operacionales_de_admon=forms.CharField(
-        widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'gastos operacionales de Admon',"autocomplete":"off"}),
+        widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Gastos Operacionales de Admon',"autocomplete":"off"}),
         required=True,
         max_length=50
     ) 
@@ -43,8 +42,8 @@ class FormularioPDF(forms.Form):
         required=True,
         max_length=50
     ) 
-    Otras_ganancias_pérdidas=forms.CharField(
-        widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Otras ganacias y perdidas',"autocomplete":"off"}),
+    Otras_ganancias_o_pérdidas=forms.CharField(
+        widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Otras ganancias o pérdidas',"autocomplete":"off"}),
         required=True,
         max_length=50
     ) 
@@ -69,7 +68,7 @@ class FormularioPDF(forms.Form):
         max_length=50
     ) 
     Efectivo_y_equivalentes_al_efectivo=forms.CharField(
-        widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'efectivo y equivalente al efectivo',"autocomplete":"off"}),
+        widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Efectivo y equivalente al efectivo',"autocomplete":"off"}),
         required=True,
         max_length=50
     ) 
@@ -124,7 +123,7 @@ class FormularioPDF(forms.Form):
         max_length=50
     ) 
     Prima_de_emisión=forms.CharField(
-        widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Prima de emision',"autocomplete":"off"}),
+        widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Prima de emisión',"autocomplete":"off"}),
         required=True,
         max_length=50
     ) 
@@ -220,7 +219,7 @@ class FormularioPDF(forms.Form):
         max_length=50
     )
     Ganancias_y_pérdidas=forms.CharField(
-        widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Ganancias y perdidas',"autocomplete":"off"}),
+        widget=forms.NumberInput(attrs={"class":"form-control mb-3","placeholder":'Ganancias y pérdidas',"autocomplete":"off"}),
         required=True,
         max_length=50
     )

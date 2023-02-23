@@ -72,4 +72,3 @@ def calcular_indicadores(fila):
         indicadores[column] = round(indicadores[column], 1)
 
     return indicadores
-
