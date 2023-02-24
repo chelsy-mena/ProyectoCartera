@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from threading import Thread
 
 def main():
     """Run administrative tasks."""
@@ -16,5 +17,9 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
+def abrir_chrome():
+    os.system("start chrome http://127.0.0.1:8000")
+
 if __name__ == '__main__':
+    Thread(target=abrir_chrome).run()
     main()

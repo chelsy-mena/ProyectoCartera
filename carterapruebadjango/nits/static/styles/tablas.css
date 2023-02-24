@@ -1,0 +1,16 @@
+.nav{
+    --bs-nav-link-hover-color: #40badc;
+    --bs-nav-link-color: var(--bs-link-color);
+}
+
+.nav-link {
+
+color: #94c11f;
+}
+.btn-custom{
+    background-color: #94c11f;
+    color: #f8f9fa;
+}
+.formulario{
+    display: flex;
+}
